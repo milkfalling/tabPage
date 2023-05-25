@@ -6,26 +6,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import com.example.tappage.databinding.FragmentTestHostBinding
 
+
+//在Host裡面做範例中用Activity做到的事情
 class TestHostFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = TestHostFragment()
-    }
-
-    private lateinit var viewModel: TestHostViewModel
+    private lateinit var binding:FragmentTestHostBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_test_host, container, false)
+        val viewModel:TestHostViewModel by viewModels()
+        binding = FragmentTestHostBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+        // 設定lifecycleOwner方能監控LiveData資料變化
+        binding.lifecycleOwner = this
+        return binding.root
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TestHostViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
