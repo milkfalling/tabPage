@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/testHostFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.tappage.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.example.tappage.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" >
+        <action
+            android:id="@+id/action_commentFragment_to_pathFragment"
+            app:destination="@id/pathFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pathFragment"
+        android:name="com.example.tappage.PathFragment"
+        android:label="fragment_path"
+        tools:layout="@layout/fragment_path" />
+    <fragment
+        android:id="@+id/testHostFragment"
+        android:name="com.example.tappage.TestHostFragment"
+        android:label="fragment_test_host"
+        tools:layout="@layout/fragment_test_host" >
+        <action
+            android:id="@+id/action_testHostFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+</navigation>
