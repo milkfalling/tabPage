@@ -20,7 +20,7 @@ class PostAdapter(private var posts: List<Post>) : //private var=既是屬性也
     class PostViewHolder(val itemViewBinding: PostItemViewBinding) :
         RecyclerView.ViewHolder(itemViewBinding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostAdapter.PostViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val itemViewBinding =
             PostItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         itemViewBinding.viewModel = PostViewModel()
@@ -36,7 +36,7 @@ class PostAdapter(private var posts: List<Post>) : //private var=既是屬性也
             bundle.putSerializable("post", post)
             itemView.setOnClickListener {
                 Navigation.findNavController(it)
-                    .navigate(R.id.action_postFragment_to_commentFragment)
+                    .navigate(R.id.postDetailFragment,bundle)
             }
         }
     }

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tappage.databinding.FragmentPostBinding
 import com.example.tappage.databinding.FragmentTestHostBinding
 
@@ -30,7 +29,7 @@ class PostFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
             // 使用 GridLayoutManager 设置网格布局，参数中的 spanCount 决定每行显示的列数
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
             viewModel?.posts?.observe(viewLifecycleOwner) { posts ->
                 recyclerView.adapter = PostAdapter(posts)
             }

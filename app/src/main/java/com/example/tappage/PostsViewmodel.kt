@@ -35,15 +35,15 @@ class PostsViewmodel : ViewModel() {
     /** 模擬取得遠端資料 */
     private fun loadPosts() {
         val postList = mutableListOf<Post>()
-        postList.add(Post(R.drawable.ivy))
-        postList.add(Post(R.drawable.mary))
-        postList.add(Post(R.drawable.sue))
-        postList.add(Post(R.drawable.ivy))
-        postList.add(Post(R.drawable.mary))
-        postList.add(Post(R.drawable.sue))
-        postList.add(Post(R.drawable.ivy))
-        postList.add(Post(R.drawable.mary))
-        postList.add(Post(R.drawable.sue))
+        postList.add(Post(R.drawable.ivy,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.mary,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.sue,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.ivy,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.mary,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.sue,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.ivy,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.mary,"好棒好棒好棒好棒好棒好棒"))
+        postList.add(Post(R.drawable.sue,"好棒好棒好棒好棒好棒好棒"))
         this.postList = postList
         this.posts.value = this.postList
     }
