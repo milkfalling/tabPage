@@ -1,7 +1,8 @@
 package com.example.tappage
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class PostViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+        val post:MutableLiveData<Post> by lazy {MutableLiveData<Post>() }
 }
